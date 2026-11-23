@@ -33,7 +33,10 @@ mun_comma := ,
 # and without a warning.
 mun_cc_accepts = $(shell printf '%s\n' '$(mun_probe_source)' | $(CC) -Werror $(1) -x c - -o /dev/null 2>/dev/null && echo yes)
 mun_flag_if = $(if $(call mun_cc_accepts,$(1)),$(1))
-mun_optimising := $(shell printf '%s\n' '\#ifndef __OPTIMIZE__' '\#error not optimising' '\#endif' | $(CC) $(CFLAGS) -E -x c - >/dev/null 2>&1 && echo yes)
+# The compiler says whether it optimises by defining __OPTIMIZE__. Asked
+# for its definitions, not with a conditional in a probe program: a '#' in
+# a makefile is read differently by different versions of make.
+mun_optimising := $(shell $(CC) $(CFLAGS) -dM -E -x c /dev/null 2>/dev/null | grep -q __OPTIMIZE__ && echo yes)
 
 MUN_HARDEN_CFLAGS := $(call mun_flag_if,-fstack-protector-strong) \
                      $(call mun_flag_if,-fstack-clash-protection) \
