@@ -297,6 +297,17 @@ class Built(unittest.TestCase):
         self.assertIn("W-HARDEN-BUILD", built.stdout)
         self.assertNotIn("E-HARDEN", built.stdout)
 
+    def test_in_the_environment_fortification_follows_optimisation(self):
+        # The environment's make is not this computer's: the same probes, asked there.
+        (self.holder / "Makefile").write_text(Probing.MAKEFILE.format(root="/opt/mun-devkit"), encoding="utf-8")
+        for flags, fortified in (("-O2", True), ("-g -Os", True), ("-O0", False), ("-g", False)):
+            done = container.run(["make", "-s", "show", f"CFLAGS={flags}"], self.holder, MUN_OS, capture=True)
+            self.assertEqual(done.returncode, 0, done.stderr)
+            given = done.stdout.splitlines()[0].split("=", 1)[1].split()
+            self.assertEqual("-D_FORTIFY_SOURCE=3" in given, fortified, flags)
+            for flag in COMPILE[:2] + COMPILE[3:]:
+                self.assertIn(flag, given)
+
     def test_the_client_builds_clean_with_them_and_carries_them(self):
         done = container.run(["make", "-f", "/opt/mun-devkit/client/c/Makefile", "BUILD=/work/build"],
                              self.holder, MUN_OS, capture=True)
