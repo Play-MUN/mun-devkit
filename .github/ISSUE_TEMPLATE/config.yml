@@ -5,6 +5,9 @@ contact_links:
   - name: Report a security problem
     url: https://github.com/Play-MUN/mun-devkit/security/advisories/new
     about: Privately, not in a public issue (SECURITY.md).
+  - name: Ask on Discord
+    url: https://discord.gg/UxgExjjhxH
+    about: Quick questions, in the developers' channel. Decisions are recorded in issues.
   - name: Something about the console itself
     url: https://github.com/Play-MUN/mun-os/issues
     about: Cards, saves, the launcher and the console's interface belong to MUN OS.

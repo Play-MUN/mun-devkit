@@ -34,7 +34,30 @@ pull request contra `dev`, como describe el resto de esta página:
   un juego para Linux ARM64: proponlo primero en un issue, con lo que el
   motor necesita de una sesión.
 
-Las preguntas también van en un issue. No hay otro canal.
+Las preguntas van en un issue o en el canal de desarrolladores del
+[Discord de MUN](https://discord.gg/UxgExjjhxH). Las decisiones quedan en los issues, para que quien
+llegue después pueda encontrarlas.
+
+## Tu primera contribución
+
+El resto de esta página dice con qué debe llegar un cambio en el cliente o
+en un contrato. Una primera contribución necesita mucho menos:
+
+1. Elige un issue con la etiqueta
+   [good first issue](https://github.com/Play-MUN/mun-devkit/labels/good%20first%20issue),
+   o arregla algo pequeño con lo que te hayas topado: una errata, un paso
+   que no estaba claro, un mensaje de error que no ayudaba.
+2. Haz un fork del repositorio, crea una rama desde `dev`, haz el cambio y
+   ejecuta `make check`.
+3. Haz el commit con `git commit -s`. El `-s` añade una línea que dice que
+   el cambio es tuyo para darlo ([más abajo](#derechos-y-firma)); no hay
+   más que eso.
+4. Abre un pull request contra `dev` y di qué ejecutaste.
+
+Si el cambio necesita una prueba y no sabes bien cómo escribirla, o toca
+una página que tiene traducción y no escribes español, dilo en el pull
+request: el mantenedor añade lo que falte o te enseña cómo. Nadie espera
+que te sepas esta página de memoria la primera vez.
 
 ## Quién decide
 

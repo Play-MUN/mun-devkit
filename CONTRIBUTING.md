@@ -32,7 +32,30 @@ against `dev`, as the rest of this page describes:
   Linux ARM64 game: propose it in an issue first, with what the engine
   needs from a session.
 
-Questions go in an issue too. There is no other channel.
+Questions go in an issue or in the developers' channel of the
+[MUN Discord](https://discord.gg/UxgExjjhxH). Decisions are recorded in issues, so that whoever comes
+later can find them.
+
+## Your first contribution
+
+The rest of this page says what a change to the client or to a contract
+must come with. A first contribution needs much less:
+
+1. Pick an issue labelled
+   [good first issue](https://github.com/Play-MUN/mun-devkit/labels/good%20first%20issue),
+   or fix something small you ran into: a typo, a step that was not clear,
+   an error message that did not help.
+2. Fork the repository, make a branch from `dev`, change it, and run
+   `make check`.
+3. Commit with `git commit -s`. The `-s` adds a line saying the change is
+   yours to give ([below](#rights-and-sign-off)); that is all there is to
+   it.
+4. Open a pull request against `dev` and say what you ran.
+
+If the change needs a test and you are not sure how to write it, or it
+touches a page that has a translation and you do not write Spanish, say so
+in the pull request: the maintainer adds what is missing or shows you how.
+Nobody is expected to know this page by heart the first time.
 
 ## Who decides
 
