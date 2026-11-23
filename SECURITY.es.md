@@ -22,6 +22,28 @@ mantenga informado. La corrección entra en `dev`, después en `main`, y se
 publica como aviso de seguridad de este repositorio. Dale ese tiempo antes
 de contárselo a nadie más, y di si quieres que se te reconozca.
 
+## Investigación de buena fe
+
+Si buscas una vulnerabilidad de buena fe, Play MUN no emprenderá ni apoyará
+acciones legales contra ti por ello. Buena fe significa aquí que:
+
+- te ciñes a lo que esta página cubre, en tu propio ordenador y con tus
+  propios ficheros;
+- no perjudicas a nadie, ni lees o conservas datos de otras personas, ni
+  degradas un servicio que usan otros;
+- avisas en privado de lo que encuentres, como se dice arriba, y das tiempo
+  a la corrección antes de contárselo a nadie más.
+
+Esto vale para el código de este repositorio y para Play MUN. No puede
+hablar por nadie más: los servicios de los que el devkit descarga tienen
+sus propios términos.
+
+## Sin recompensa económica
+
+No hay recompensa económica por un aviso, y no debe esperarse ninguna. Lo
+que recibe un aviso es una respuesta, una corrección y el reconocimiento en
+el aviso de seguridad si lo quieres.
+
 ## Qué cubre
 
 Lo que el devkit promete proteger:

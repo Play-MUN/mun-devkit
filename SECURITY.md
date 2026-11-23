@@ -21,6 +21,28 @@ after it. A fix lands on `dev`, then on `main`, and is published as a
 security advisory of this repository. Please give that time before telling
 anyone else, and say whether you want to be credited.
 
+## Research in good faith
+
+If you look for a vulnerability in good faith, Play MUN will not take or
+support legal action against you for it. Good faith here means that you:
+
+- keep to what this page puts in scope, on your own computer and with your
+  own files;
+- do not harm anyone, read or keep anyone else's data, or degrade a
+  service others use;
+- report what you find privately, as above, and give the fix time before
+  telling anyone else.
+
+This speaks for this repository's code and for Play MUN. It cannot speak
+for anyone else: the services the devkit downloads from have terms of
+their own.
+
+## No bounty
+
+There is no monetary reward for a report, and none should be expected.
+What a report gets is an answer, a fix, and credit in the advisory if you
+want it.
+
 ## What is in scope
 
 What the devkit promises to protect:

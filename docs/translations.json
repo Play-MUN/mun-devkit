@@ -3,15 +3,15 @@
   "translations": {
     "README.es.md": {
       "source": "README.md",
-      "source_sha256": "9c7bc9b620fa444563b3d4fa88671109a9a6fbb765a9cf5004ce6960f4824878"
+      "source_sha256": "b663db14c3579f9c543328a13f3d2d0f00c0666ab22a1b899cdc591b04be0da0"
     },
     "SECURITY.es.md": {
       "source": "SECURITY.md",
-      "source_sha256": "d0804272cfcae585a7a301422f55f97612fd7c38b002c1dfb2267d3d6bd53325"
+      "source_sha256": "25297290832175fba31aed60691079d4b47a39250dbc89cd761ac6fff5562c67"
     },
     "CONTRIBUTING.es.md": {
       "source": "CONTRIBUTING.md",
-      "source_sha256": "67805b7902deedbfe7735e0ddb18b049107732be99369981017ee1567bf3492b"
+      "source_sha256": "6b864c5d170d1c1beb3b3d8bba8a9d0342d291ca99259ce3b38eb40b7243fd96"
     },
     "CODE_OF_CONDUCT.es.md": {
       "source": "CODE_OF_CONDUCT.md",
