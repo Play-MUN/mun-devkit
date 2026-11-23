@@ -13,6 +13,11 @@ the card. The devkit does not replace or wrap those contracts. It reuses
 MUN OS's own card tool and validator, so a card `mdk` makes is a card the
 console's code has already read.
 
+**MUN Disk** and **Game Card** are one thing: MUN Disk is the name of the
+console's medium, the product a player holds; Game Card is what its format
+and its tools call it, and so do these pages when they speak of the image,
+the manifest or the card tool.
+
 ## The project
 
 MUN is a console in development for physical games you own, made by Play
@@ -42,7 +47,7 @@ a console's hardware.
 | Static C client (`client/c`): session facts, restore and acknowledged save | Tested against the simulator and against save files as a console writes them |
 | Session simulator | Reproduces the session layout, the save service and how a session ends; not the sandbox or any device |
 | Sample `samples/hello-mun` (SDL2, OpenGL, OpenAL; profile `linux-arm64-gl-v0`) | Builds, passes the checks, packs, and runs in the simulator, drawing with Mesa's software renderer |
-| Godot 4.7 adapter (`engines/godot`): GDScript, no native code | Saves and restores against the simulator with the pinned engine build; an exported game for a console is not possible yet ([why](engines/godot/README.md)) |
+| Godot adapter (`engines/godot`): GDScript, no native code | Written for Godot 4.7 and checked with exactly one build, the official 4.7.2-stable for Linux ARM64, which `engines/godot/fetch.sh` fetches and verifies. It saves and restores against the simulator; an exported game for a console is not possible yet ([why](engines/godot/README.md)). Other versions have not been tried: a report of one that works, or does not, is welcome |
 | Other engines | Nothing yet |
 
 The runtime profiles are MUN OS's and are provisional there: its documents
@@ -267,8 +272,10 @@ LICENSE, LICENSES/     the licence texts; docs/licensing.md says which covers wh
 Fixes, tests, samples, translations and reports of what happened on your
 computer are welcome: [contributing](CONTRIBUTING.md) says how a change
 travels and what it must come with, and everyone taking part follows the
-[code of conduct](CODE_OF_CONDUCT.md). Questions go in an issue. A security
-problem goes privately to the maintainer ([security](SECURITY.md)).
+[code of conduct](CODE_OF_CONDUCT.md). Questions go in an issue or in the
+developers' channel of the [MUN Discord](https://discord.gg/UxgExjjhxH); decisions are recorded in
+issues. A security problem goes privately to the maintainer
+([security](SECURITY.md)).
 
 ## Licence
 

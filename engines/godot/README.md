@@ -1,6 +1,9 @@
 # Godot
 
-For Godot 4.7 (checked with 4.7.2-stable, the official Linux ARM64 build).
+For Godot 4.7. Checked with exactly one build: 4.7.2-stable, the official
+Linux ARM64 editor, which `fetch.sh` downloads and verifies by its SHA-512.
+No other version has been tried; a report of one that works, or does not,
+is welcome.
 
 | Part | State |
 | --- | --- |

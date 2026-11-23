@@ -15,6 +15,12 @@ envuelve esos contratos. Reutiliza la herramienta de tarjetas y el
 validador del propio MUN OS, de modo que una tarjeta que hace `mdk` es una
 tarjeta que el código de la consola ya ha leído.
 
+**MUN Disk** y **Game Card** son una sola cosa: MUN Disk es el nombre del
+soporte de la consola, el producto que un jugador tiene en la mano; Game
+Card es como lo llaman su formato y sus herramientas, y también estas
+páginas cuando hablan de la imagen, del manifiesto o de la herramienta de
+tarjetas.
+
 ## El proyecto
 
 MUN es una consola en desarrollo para juegos físicos que son tuyos, hecha
@@ -44,7 +50,7 @@ ejecutado en el hardware de una consola.
 | Cliente estático en C (`client/c`): datos de la sesión, restauración y guardado confirmado | Probado contra el simulador y contra partidas guardadas tal como las escribe una consola |
 | Simulador de sesión | Reproduce la disposición de la sesión, el servicio de guardado y cómo termina una sesión; no el sandbox ni ningún dispositivo |
 | Ejemplo `samples/hello-mun` (SDL2, OpenGL, OpenAL; perfil `linux-arm64-gl-v0`) | Compila, pasa las comprobaciones, se empaqueta y se ejecuta en el simulador, dibujando con el renderizador por software de Mesa |
-| Adaptador para Godot 4.7 (`engines/godot`): GDScript, sin código nativo | Guarda y restaura contra el simulador con la versión fijada del motor; un juego exportado para una consola todavía no es posible ([por qué](engines/godot/README.md)) |
+| Adaptador para Godot (`engines/godot`): GDScript, sin código nativo | Escrito para Godot 4.7 y comprobado con una sola versión exacta, la oficial 4.7.2-stable para Linux ARM64, que `engines/godot/fetch.sh` descarga y verifica. Guarda y restaura contra el simulador; un juego exportado para una consola todavía no es posible ([por qué](engines/godot/README.md)). Otras versiones no se han probado: un informe de una que funcione, o que no, es bienvenido |
 | Otros motores | Nada todavía |
 
 Los perfiles de ejecución son de MUN OS y allí son provisionales: sus
@@ -285,8 +291,9 @@ Las correcciones, las pruebas, los ejemplos, las traducciones y los
 informes de lo que pasó en tu ordenador son bienvenidos:
 [contribuir](CONTRIBUTING.es.md) dice cómo viaja un cambio y con qué debe
 llegar, y quien participa sigue el
-[código de conducta](CODE_OF_CONDUCT.es.md). Las preguntas van en un issue.
-Un problema de seguridad va en privado al mantenedor
+[código de conducta](CODE_OF_CONDUCT.es.md). Las preguntas van en un issue
+o en el canal de desarrolladores del [Discord de MUN](https://discord.gg/UxgExjjhxH); las decisiones
+quedan en los issues. Un problema de seguridad va en privado al mantenedor
 ([seguridad](SECURITY.es.md)).
 
 ## Licencia
