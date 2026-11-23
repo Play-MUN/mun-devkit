@@ -55,7 +55,11 @@ that licence.
 
 ## Third-party material
 
-The devkit copies nothing from elsewhere into this repository.
-[What it uses](third-party.md), and under which terms, is listed apart. A
+One text in this repository comes from elsewhere: the
+[code of conduct](../CODE_OF_CONDUCT.md) and its Spanish translation are the
+Contributor Covenant 2.1, under the Creative Commons Attribution 4.0
+International licence, with its attribution in the text. Nothing else is
+copied in. [What the devkit uses](third-party.md), and under which terms, is
+listed apart. A
 game made with an engine carries that engine's own notices: the engine's
 licence is not the devkit's to give.

@@ -1,0 +1,69 @@
+# Copyright 2026 Iván Moreno Mendoza
+# SPDX-License-Identifier: Apache-2.0
+name: Something does not work
+description: A bug in mdk, the client, a sample, an adapter or the documentation. English or Spanish.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what you expected
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: How to make it happen
+      description: The commands you ran, in order.
+      placeholder: |
+        ./mdk new star-well
+        cd star-well
+        ../mdk build
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: MUN Devkit revision
+      description: The commit (`git rev-parse --short HEAD`).
+    validations:
+      required: true
+  - type: textarea
+    id: doctor
+    attributes:
+      label: What `./mdk doctor` prints
+      description: It says what your computer has, which MUN OS revision was found and whether the build environment is there.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: computer
+    attributes:
+      label: Your computer
+      description: System and version, processor, container runtime and its version.
+      placeholder: macOS 27, Apple M4, Docker 29
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where
+      options:
+        - Setting up (doctor, os fetch, env build)
+        - Starting or building a project (new, build)
+        - The checks (check)
+        - Making a card (pack)
+        - The simulator (sim)
+        - The C client
+        - The Godot adapter
+        - Documentation or a translation
+        - It worked, on a computer the README does not list
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Output
+      description: What the tool printed, with its error code (E-…) if it gave one.
+      render: text
