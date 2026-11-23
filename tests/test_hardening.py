@@ -121,6 +121,11 @@ class BuildCommands(unittest.TestCase):
         found = checks.compiler_commands("mkdir -p build && cc -O2 -Wl,-z,now -o build/game game.c | tee log; ls\n")
         self.assertEqual(found, [["cc", "-O2", "-Wl,-z,now", "-o", "build/game", "game.c"]])
 
+    def test_the_number_of_a_redirected_stream_is_not_an_argument(self):
+        for line in ("cc -O2 -o build/game game.c 2>&1", "cc -O2 -o build/game game.c 2>/dev/null", "cc -O2 -o build/game game.c 1>>log 2>&1"):
+            self.assertEqual(checks.compiler_commands(line + "\n"), [["cc", "-O2", "-o", "build/game", "game.c"]], line)
+        self.assertEqual(checks.compiler_commands("cc -O2 -c a.c 2 | tee log\n"), [["cc", "-O2", "-c", "a.c", "2"]])
+
     def test_complete_commands_leave_no_finding(self):
         self.assertEqual(checks.check_build_commands(self.commands()), [])
 

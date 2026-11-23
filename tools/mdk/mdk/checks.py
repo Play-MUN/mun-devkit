@@ -157,6 +157,8 @@ def compiler_commands(log: str) -> List[List[str]]:
         words: List[str] = []
         for token in tokens + [";"]:
             if token and not set(token) - set("();<>|&"):          # an operator: the command ends here
+                if words and words[-1].isdigit() and token[0] in "<>":
+                    words.pop()               # the 2 of `2>&1` belongs to the redirection
                 if words and COMPILER.fullmatch(Path(words[0]).name) and not {"-E", "-M", "-MM"} & set(words):
                     found.append(words)
                 words = []
