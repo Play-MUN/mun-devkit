@@ -2,6 +2,9 @@
 
 **English** · [Español](README.es.md)
 
+[![Checks](https://github.com/Play-MUN/mun-devkit/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/Play-MUN/mun-devkit/actions/workflows/checks.yml)
+[![Licence: Apache-2.0 and MIT-0](https://img.shields.io/badge/licence-Apache--2.0%20%C2%B7%20MIT--0-blue)](docs/licensing.md)
+
 Tools for making and porting games for MUN™: a host tool (`mdk`), a small
 static C client for what a console gives a game, a session simulator, and a
 sample that goes from source to a Game Card image.

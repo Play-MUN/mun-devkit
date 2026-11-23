@@ -2,6 +2,9 @@
 
 [English](README.md) · **Español**
 
+[![Comprobaciones](https://github.com/Play-MUN/mun-devkit/actions/workflows/checks.yml/badge.svg?branch=main)](https://github.com/Play-MUN/mun-devkit/actions/workflows/checks.yml)
+[![Licencia: Apache-2.0 y MIT-0](https://img.shields.io/badge/licencia-Apache--2.0%20%C2%B7%20MIT--0-blue)](docs/licensing.md)
+
 Herramientas para hacer y portar juegos para MUN™: una herramienta de
 ordenador (`mdk`), un pequeño cliente estático en C para lo que una consola
 da a un juego, un simulador de sesión, y un ejemplo que va del código
