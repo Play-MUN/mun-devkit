@@ -27,6 +27,7 @@ import unittest
 from pathlib import Path
 
 import gitenv
+from support import needs, unavailable
 
 TESTS = Path(__file__).resolve().parent
 GIT = shutil.which("git")
@@ -50,7 +51,7 @@ def run_the_tests(environment):
         capture_output=True, text=True)
 
 
-@unittest.skipUnless(GIT, "needs git")
+@needs("" if GIT else "git is not installed")
 class GitIsolation(unittest.TestCase):
     def test_a_repository_named_by_git_s_variables_is_left_alone(self):
         with tempfile.TemporaryDirectory(prefix="mdk-hook-") as holder:
@@ -76,8 +77,9 @@ class GitIsolation(unittest.TestCase):
             self.assertEqual(done.returncode, 0, done.stderr[-3000:])
             self.assertEqual(state(), before)
 
-    @unittest.skipUnless(os.name == "posix", "the hostile programs are POSIX scripts")
     def test_none_of_the_developer_s_git_runs(self):
+        if os.name != "posix":
+            unavailable(self, "the hostile programs are POSIX scripts")
         with tempfile.TemporaryDirectory(prefix="mdk-hook-") as holder:
             hostile = Path(holder) / "hostile"
             log = hostile / "ran.log"

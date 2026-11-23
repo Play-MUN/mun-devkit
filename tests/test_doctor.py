@@ -60,12 +60,11 @@ class Doctor(Scratch):
         self.assertTrue(self.doctor(self.runtime(RUNNING_WITH_IMAGE)).startswith("ok"))
 
     def test_no_runtime_at_all_is_absent(self):
+        # A PATH with nothing on it: this Python is started by its own path,
+        # and doctor reports whatever else it then lacks without stopping.
         empty = self.scratch / "empty"
         empty.mkdir()
-        environment = dict(os.environ, PATH=f"{empty}{os.pathsep}/usr/bin{os.pathsep}/bin")
-        if any(os.access(os.path.join(place, "docker"), os.X_OK) for place in ("/usr/bin", "/bin")):
-            self.skipTest("this computer has docker in a system directory")
-        line = self.doctor(environment)
+        line = self.doctor(dict(os.environ, PATH=str(empty)))
         self.assertTrue(line.startswith("absent"), line)
 
     def test_what_needs_the_environment_says_why_it_cannot_run(self):

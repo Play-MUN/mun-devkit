@@ -149,6 +149,8 @@ def compile_munc(directory: Path) -> Path:
     the compiler offers."""
     compiler = shutil.which("cc")
     if not compiler:
+        if os.environ.get("MDK_REQUIRE_ALL") == "1":
+            raise AssertionError("required, and not possible here: no C compiler on this computer")
         raise unittest.SkipTest("no C compiler on this computer")
     target = directory / "munc"
     sources = [str(ROOT / "client" / "c" / "tests" / "munc.c"), str(ROOT / "client" / "c" / "mun.c")]
