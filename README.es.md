@@ -15,6 +15,23 @@ envuelve esos contratos. Reutiliza la herramienta de tarjetas y el
 validador del propio MUN OS, de modo que una tarjeta que hace `mdk` es una
 tarjeta que el código de la consola ya ha leído.
 
+## El proyecto
+
+MUN es una consola en desarrollo para juegos físicos que son tuyos, hecha
+por Play MUN: [playmun.com](https://playmun.com). El devkit es uno de sus
+dos repositorios abiertos:
+
+| | |
+| --- | --- |
+| [MUN OS](https://github.com/Play-MUN/mun-os/blob/main/README.es.md) | El sistema operativo abierto de la consola. Funciona en tu ordenador con QEMU, y una tarjeta hecha con el devkit entra en él |
+| [Running a game](https://github.com/Play-MUN/mun-os/blob/main/docs/runtime.md) | La sesión que recibe un juego: su perfil de ejecución, su entorno, cómo termina (en inglés) |
+| [Saves](https://github.com/Play-MUN/mun-os/blob/main/docs/saves.md) | Qué es una partida guardada, el servicio que la escribe y cada código con que responde (en inglés) |
+| [Game Cards](https://github.com/Play-MUN/mun-os/blob/main/docs/game-cards.md) | El formato de la tarjeta, su manifiesto y la herramienta de tarjetas (en inglés) |
+| [Llevar un juego a MUN](https://github.com/Play-MUN/mun-os/blob/main/docs/es/guides/port-a-game.md) | La guía del propio MUN OS para portar un juego, paso a paso |
+
+Esas páginas son los contratos; este repositorio los sigue y dice contra
+qué revisión se comprobó (`mun-os.lock.json`).
+
 ## Estado
 
 Temprano. Lo que existe es lo que se enumera aquí, y nada de ello se ha
