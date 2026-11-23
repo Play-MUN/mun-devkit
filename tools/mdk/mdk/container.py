@@ -37,9 +37,22 @@ def docker() -> str:
     return found
 
 
+def running() -> bool:
+    """Whether the container runtime answers: installed is not running."""
+    done = subprocess.run(  # nosec B603: docker by the full path which() found; a fixed subcommand
+        [docker(), "info", "--format", "{{.ServerVersion}}"], capture_output=True, check=False)
+    return done.returncode == 0
+
+
 def image_exists() -> bool:
+    """Whether the environment is built. A runtime that does not answer is
+    another matter, with another next step: E-ENV-RUNTIME."""
     done = subprocess.run(  # nosec B603: docker by the full path which() found; a fixed subcommand and the image's own tag
         [docker(), "image", "inspect", image_tag()], capture_output=True, check=False)
+    if done.returncode != 0 and not running():
+        raise MdkError("E-ENV-RUNTIME", "The container runtime is installed but not running.",
+                       "Start it (Docker Desktop, OrbStack, Colima, or `systemctl start docker`) and try again.",
+                       done.stderr.decode("utf-8", "replace").strip())
     return done.returncode == 0
 
 
