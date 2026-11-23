@@ -6,15 +6,20 @@ clone at exactly the pinned commit, a stale copy is brought to it, and a
 repository that does not hold what the lock describes is refused."""
 
 import os
+import shutil
 import unittest
 from unittest import mock
 
-from support import Scratch
+from support import Scratch, needs
 from test_osrepo_environment import git, repository
 
 from mdk import osrepo
 
 
+GIT = shutil.which("git")
+
+
+@needs("" if GIT else "git is not installed")
 class Fetch(Scratch):
     def setUp(self):
         super().setUp()

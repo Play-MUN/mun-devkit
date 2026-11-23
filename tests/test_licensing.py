@@ -5,10 +5,11 @@ its part of the repository, and the licence texts are in place.
 
 Checked over the files Git tracks; skipped outside a Git checkout."""
 
+import shutil
 import subprocess  # nosec B404: asks Git which files it tracks
 import unittest
 
-from support import ROOT, isolate_git, unavailable
+from support import ROOT, isolate_git, needs, unavailable
 
 from mdk import osrepo
 
@@ -34,6 +35,10 @@ def tracked():
     return [line for line in done.stdout.splitlines() if line] if done.returncode == 0 else None
 
 
+GIT = shutil.which("git")
+
+
+@needs("" if GIT else "git is not installed")
 class Licensing(unittest.TestCase):
     def setUp(self):
         isolate_git(self)

@@ -10,14 +10,17 @@ repository, in a temporary folder, and requires the answer to be the
 checkout's own and the decoy to be exactly as it was."""
 
 import os
+import shutil
 import subprocess  # nosec B404: makes Git repositories for the tests
 import unittest
 from pathlib import Path
 from unittest import mock
 
-from support import Scratch
+from support import Scratch, needs
 
 from mdk import osrepo
+
+GIT = shutil.which("git")
 
 
 def clean_environment():
@@ -44,6 +47,7 @@ def repository(directory: Path, files) -> Path:
     return directory
 
 
+@needs("" if GIT else "git is not installed")
 class InheritedGitVariables(Scratch):
     def setUp(self):
         super().setUp()
