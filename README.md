@@ -1,5 +1,7 @@
 # MUN Devkit
 
+**English** · [Español](README.es.md)
+
 Tools for making and porting games for MUN™: a host tool (`mdk`), a small
 static C client for what a console gives a game, a session simulator, and a
 sample that goes from source to a Game Card image.
@@ -11,6 +13,23 @@ the card. The devkit does not replace or wrap those contracts. It reuses
 MUN OS's own card tool and validator, so a card `mdk` makes is a card the
 console's code has already read.
 
+## The project
+
+MUN is a console in development for physical games you own, made by Play
+MUN: [playmun.com](https://playmun.com). The devkit is one of its two open
+repositories:
+
+| | |
+| --- | --- |
+| [MUN OS](https://github.com/Play-MUN/mun-os) | The console's open operating system. It runs on your computer in QEMU, and a card made with the devkit goes into it |
+| [Running a game](https://github.com/Play-MUN/mun-os/blob/main/docs/runtime.md) | The session a game gets: its runtime profile, its environment, how it ends |
+| [Saves](https://github.com/Play-MUN/mun-os/blob/main/docs/saves.md) | What a save is, the service that writes it and every code it answers with |
+| [Game Cards](https://github.com/Play-MUN/mun-os/blob/main/docs/game-cards.md) | The card's format, its manifest and the card tool |
+| [Bring a game to MUN](https://github.com/Play-MUN/mun-os/blob/main/docs/guides/port-a-game.md) | MUN OS's own guide to porting a game, step by step |
+
+Those pages are the contracts; this repository follows them and says which
+revision it was checked against (`mun-os.lock.json`).
+
 ## Status
 
 Early. What exists is what is listed here, and nothing in it has been run on
@@ -18,7 +37,7 @@ a console's hardware.
 
 | Part | State |
 | --- | --- |
-| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Work on macOS (Apple Silicon) with a container runtime; Linux expected, not tried |
+| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Work on macOS (Apple Silicon) and on Linux ARM64 with a container runtime: every pull request runs the whole journey there (Ubuntu 24.04). On Linux x86-64 the host checks run; building for a console there needs emulation and has not been tried |
 | MUN OS followed | v0.1.0-dev.5 (`mun-os.lock.json`); the checks also pass with v0.1.0-dev.4's tools |
 | Static C client (`client/c`): session facts, restore and acknowledged save | Tested against the simulator and against save files as a console writes them |
 | Session simulator | Reproduces the session layout, the save service and how a session ends; not the sandbox or any device |
@@ -242,6 +261,14 @@ tests/                 host tests; the sample's run in the environment
 mun-os.lock.json       the MUN OS revision the devkit was checked against
 LICENSE, LICENSES/     the licence texts; docs/licensing.md says which covers what
 ```
+
+## Contributing
+
+Fixes, tests, samples, translations and reports of what happened on your
+computer are welcome: [contributing](CONTRIBUTING.md) says how a change
+travels and what it must come with, and everyone taking part follows the
+[code of conduct](CODE_OF_CONDUCT.md). Questions go in an issue. A security
+problem goes privately to the maintainer ([security](SECURITY.md)).
 
 ## Licence
 
