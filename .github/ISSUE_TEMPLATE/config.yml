@@ -1,0 +1,10 @@
+# Copyright 2026 Iván Moreno Mendoza
+# SPDX-License-Identifier: Apache-2.0
+blank_issues_enabled: true
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/Play-MUN/mun-devkit/security/advisories/new
+    about: Privately, not in a public issue (SECURITY.md).
+  - name: Something about the console itself
+    url: https://github.com/Play-MUN/mun-os/issues
+    about: Cards, saves, the launcher and the console's interface belong to MUN OS.

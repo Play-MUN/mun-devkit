@@ -1,0 +1,23 @@
+# Copyright 2026 Iván Moreno Mendoza
+# SPDX-License-Identifier: Apache-2.0
+name: An idea, a proposal or a question
+description: Something the devkit should do, or do differently; an engine; a question. English or Spanish.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem or the question
+      description: What you want to do and cannot, or what gets in the way.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you propose
+      description: Larger changes are discussed here before anyone implements them (CONTRIBUTING.md).
+  - type: textarea
+    id: games
+    attributes:
+      label: Games already made
+      description: Would a game built with today's client or contracts notice? What would it meet?
