@@ -61,11 +61,15 @@ def cmd_doctor(args) -> int:
     rows.append(("ok" if compiler else "absent", "C compiler", compiler or "only needed for the devkit's own host tests"))
     try:
         container.docker()
-        built = container.image_exists()
-        rows.append(("ok" if built else "not built", "SDK environment",
-                     container.image_tag() + ("" if built else "; run `mdk env build` (needed for `mdk build`)")))
     except MdkError as exc:
         rows.append(("absent", "container runtime", exc.message + " Needed for `mdk build`."))
+    else:
+        try:
+            built = container.image_exists()
+            rows.append(("ok" if built else "not built", "SDK environment",
+                         container.image_tag() + ("" if built else "; run `mdk env build` (needed for `mdk build`)")))
+        except MdkError as exc:      # installed and not answering: nothing to build, something to start
+            rows.append(("stopped", "container runtime", f"{exc.message} {exc.remedy} Needed for `mdk build`."))
     for state, name, text in rows:
         print(f"{state:9} {name:16} {text}")
     return 1 if missing else 0
