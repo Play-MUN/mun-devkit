@@ -1,5 +1,7 @@
 # MUN Devkit
 
+**English** · [Español](README.es.md)
+
 Tools for making and porting games for MUN™: a host tool (`mdk`), a small
 static C client for what a console gives a game, a session simulator, and a
 sample that goes from source to a Game Card image.
@@ -18,7 +20,7 @@ a console's hardware.
 
 | Part | State |
 | --- | --- |
-| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Work on macOS (Apple Silicon) with a container runtime; Linux expected, not tried |
+| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Work on macOS (Apple Silicon) with a container runtime. On Linux the host checks pass (Debian 13, ARM64); the steps that need a container runtime have not been tried there |
 | MUN OS followed | v0.1.0-dev.5 (`mun-os.lock.json`); the checks also pass with v0.1.0-dev.4's tools |
 | Static C client (`client/c`): session facts, restore and acknowledged save | Tested against the simulator and against save files as a console writes them |
 | Session simulator | Reproduces the session layout, the save service and how a session ends; not the sandbox or any device |
@@ -242,6 +244,14 @@ tests/                 host tests; the sample's run in the environment
 mun-os.lock.json       the MUN OS revision the devkit was checked against
 LICENSE, LICENSES/     the licence texts; docs/licensing.md says which covers what
 ```
+
+## Contributing
+
+Fixes, tests, samples, translations and reports of what happened on your
+computer are welcome: [contributing](CONTRIBUTING.md) says how a change
+travels and what it must come with, and everyone taking part follows the
+[code of conduct](CODE_OF_CONDUCT.md). Questions go in an issue. A security
+problem goes privately to the maintainer ([security](SECURITY.md)).
 
 ## Licence
 

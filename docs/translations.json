@@ -1,0 +1,22 @@
+{
+  "_comment": "Each translation and the SHA-256 of the English page it was last reviewed against (tests/test_docs.py). Change a value only after reading both pages.",
+  "translations": {
+    "README.es.md": {
+      "source": "README.md",
+      "source_sha256": "df44b60dfd3195d5f82e6e6e2d34214e879597e6cc2a0e1cb6e9f3620a905cd0"
+    },
+    "SECURITY.es.md": {
+      "source": "SECURITY.md",
+      "source_sha256": "d0804272cfcae585a7a301422f55f97612fd7c38b002c1dfb2267d3d6bd53325"
+    },
+    "CONTRIBUTING.es.md": {
+      "source": "CONTRIBUTING.md",
+      "source_sha256": "638ca90f27dc9cd661e5181daf0e755672ea82b9b26c553ba9b2f8703280fedd"
+    },
+    "CODE_OF_CONDUCT.es.md": {
+      "source": "CODE_OF_CONDUCT.md",
+      "source_sha256": "ddf4f2357100cbf67fbd3e1d843e25c4c711c0974cfc643cef718f9a13dea298",
+      "verbatim_from_its_publisher": true
+    }
+  }
+}
