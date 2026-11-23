@@ -39,7 +39,7 @@ ejecutado en el hardware de una consola.
 
 | Parte | Estado |
 | --- | --- |
-| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Funcionan en macOS (Apple Silicon) con un motor de contenedores. En Linux pasan las comprobaciones de ordenador (Debian 13, ARM64); los pasos que necesitan un motor de contenedores no se han probado allí |
+| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Funcionan en macOS (Apple Silicon) y en Linux ARM64 con un motor de contenedores: cada pull request ejecuta allí el recorrido completo (Ubuntu 24.04). En Linux x86-64 se ejecutan las comprobaciones de ordenador; compilar para una consola necesita allí emulación y no se ha probado |
 | MUN OS seguido | v0.1.0-dev.5 (`mun-os.lock.json`); las comprobaciones pasan también con las herramientas de v0.1.0-dev.4 |
 | Cliente estático en C (`client/c`): datos de la sesión, restauración y guardado confirmado | Probado contra el simulador y contra partidas guardadas tal como las escribe una consola |
 | Simulador de sesión | Reproduce la disposición de la sesión, el servicio de guardado y cómo termina una sesión; no el sandbox ni ningún dispositivo |

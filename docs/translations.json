@@ -3,7 +3,7 @@
   "translations": {
     "README.es.md": {
       "source": "README.md",
-      "source_sha256": "b5d5110f5107debae70bf86091ce3f2947848b4ed8a23df421908522d4faaafe"
+      "source_sha256": "9c7bc9b620fa444563b3d4fa88671109a9a6fbb765a9cf5004ce6960f4824878"
     },
     "SECURITY.es.md": {
       "source": "SECURITY.md",
@@ -11,7 +11,7 @@
     },
     "CONTRIBUTING.es.md": {
       "source": "CONTRIBUTING.md",
-      "source_sha256": "638ca90f27dc9cd661e5181daf0e755672ea82b9b26c553ba9b2f8703280fedd"
+      "source_sha256": "67805b7902deedbfe7735e0ddb18b049107732be99369981017ee1567bf3492b"
     },
     "CODE_OF_CONDUCT.es.md": {
       "source": "CODE_OF_CONDUCT.md",

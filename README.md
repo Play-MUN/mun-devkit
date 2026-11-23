@@ -37,7 +37,7 @@ a console's hardware.
 
 | Part | State |
 | --- | --- |
-| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Work on macOS (Apple Silicon) with a container runtime. On Linux the host checks pass (Debian 13, ARM64); the steps that need a container runtime have not been tried there |
+| `mdk doctor`, `os`, `env`, `new`, `build`, `check`, `pack`, `sim` | Work on macOS (Apple Silicon) and on Linux ARM64 with a container runtime: every pull request runs the whole journey there (Ubuntu 24.04). On Linux x86-64 the host checks run; building for a console there needs emulation and has not been tried |
 | MUN OS followed | v0.1.0-dev.5 (`mun-os.lock.json`); the checks also pass with v0.1.0-dev.4's tools |
 | Static C client (`client/c`): session facts, restore and acknowledged save | Tested against the simulator and against save files as a console writes them |
 | Session simulator | Reproduces the session layout, the save service and how a session ends; not the sandbox or any device |

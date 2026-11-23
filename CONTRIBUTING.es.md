@@ -17,8 +17,8 @@ No toda la ayuda es código. Cada una de estas pasa por un issue o por un
 pull request contra `dev`, como describe el resto de esta página:
 
 - **Pruébalo en tu ordenador.** Sigue el README desde `./mdk doctor` hasta
-  una partida guardada en Linux (x86-64 o ARM64) o en un Mac con procesador
-  Intel. Cuenta lo que pasó con la plantilla de fallo; un informe de que
+  una partida guardada en Linux x86-64, en un Mac con procesador Intel, o
+  en una distribución de Linux que no sea Ubuntu. Cuenta lo que pasó con la plantilla de fallo; un informe de que
   funciona vale tanto como uno de que no.
 - **Lleva un juego a una tarjeta.** Pasa un juego SDL2 u OpenGL que puedas
   redistribuir por `mdk new`, `build`, `check`, `pack` y `sim`, y convierte

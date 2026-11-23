@@ -16,8 +16,8 @@ Not all help is code. Each of these goes through an issue or a pull request
 against `dev`, as the rest of this page describes:
 
 - **Try it on your computer.** Follow the README from `./mdk doctor` to a
-  saved game on Linux (x86-64 or ARM64) or on a Mac with an Intel
-  processor. Report what happened with the bug report template; a report
+  saved game on Linux x86-64, on a Mac with an Intel processor, or on a
+  Linux distribution other than Ubuntu. Report what happened with the bug report template; a report
   that it works counts as much as one that it does not.
 - **Bring a game to a card.** Take an SDL2 or OpenGL game you may
   redistribute through `mdk new`, `build`, `check`, `pack` and `sim`, and
