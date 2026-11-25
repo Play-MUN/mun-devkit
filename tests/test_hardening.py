@@ -126,6 +126,19 @@ class BuildCommands(unittest.TestCase):
             self.assertEqual(checks.compiler_commands(line + "\n"), [["cc", "-O2", "-o", "build/game", "game.c"]], line)
         self.assertEqual(checks.compiler_commands("cc -O2 -c a.c 2 | tee log\n"), [["cc", "-O2", "-c", "a.c", "2"]])
 
+    def test_a_command_written_over_several_lines_is_one_command(self):
+        # As make echoes a recipe line that ends in a backslash: the backslash, then the rest on the next line.
+        log = ("mkdir -p build\n"
+               "cc -O2 -fstack-protector-strong -c -o build/a.o \\\n"
+               "\t\tsrc/a.c src/b.c \\\n"
+               "\t\t-Wl,-z,now -lm\n"
+               "python3 tools/stage_content.py build/content\n")
+        self.assertEqual(checks.compiler_commands(log),
+                         [["cc", "-O2", "-fstack-protector-strong", "-c", "-o", "build/a.o", "src/a.c", "src/b.c",
+                           "-Wl,-z,now", "-lm"]])
+        # A backslash that ends the whole output joins nothing and hides nothing before it.
+        self.assertEqual(checks.compiler_commands("cc -c a.c\ncc -c b.c \\"), [["cc", "-c", "a.c"], ["cc", "-c", "b.c"]])
+
     def test_complete_commands_leave_no_finding(self):
         self.assertEqual(checks.check_build_commands(self.commands()), [])
 
