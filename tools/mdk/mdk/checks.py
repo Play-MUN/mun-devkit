@@ -145,9 +145,18 @@ def compiler_commands(log: str) -> List[List[str]]:
     """The compiler's commands in a build's output, as arguments: the lines
     a build tool echoes before running them (make does; a tool that prints
     none leaves nothing to read). A line may hold several commands
-    (`mkdir -p build && cc ...`)."""
+    (`mkdir -p build && cc ...`), and a command may be written over several
+    lines, each but the last ending in a backslash, as make echoes it."""
     found = []
+    lines: List[str] = []
     for line in log.splitlines():
+        if lines and lines[-1].rstrip().endswith("\\"):
+            lines[-1] = lines[-1].rstrip()[:-1] + " " + line.strip()
+        else:
+            lines.append(line)
+    for line in lines:
+        if line.rstrip().endswith("\\"):   # the output ended there: nothing follows to join
+            line = line.rstrip()[:-1]
         lexer = shlex.shlex(line, posix=True, punctuation_chars=True)
         lexer.whitespace_split = True
         try:
